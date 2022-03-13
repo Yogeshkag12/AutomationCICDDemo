@@ -21,7 +21,16 @@ pipeline {
         }
          stage('smoke') {
             steps {
-                sh 'echo "Hello World smoke test is in progress"'
+                sh 'echo "Hello World smoke test is inprogress"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
+            }
+        }
+         stage('regression') {
+            steps {
+                sh 'echo "Hello World smoke test is regression"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
